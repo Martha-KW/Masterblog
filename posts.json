@@ -1,4 +1,32 @@
 [
-    {"id": 1, "author": "John Doe", "title": "First Post", "content": "This is my first post."},
-    {"id": 2, "author": "Jane Doe", "title": "Second Post", "content": "This is another post."}
+    {
+        "id": 1,
+        "author": "John Doe",
+        "title": "First Post",
+        "content": "This is my first post."
+    },
+    {
+        "id": 2,
+        "author": "Jane Doe",
+        "title": "Second Post",
+        "content": "This is another post."
+    },
+    {
+        "id": 3,
+        "title": "Upload test",
+        "author": "admin",
+        "content": "does this work?\r\n"
+    },
+    {
+        "id": 4,
+        "title": "second test",
+        "author": "admin",
+        "content": "without line break?"
+    },
+    {
+        "id": 5,
+        "title": "upload with link",
+        "author": "admin",
+        "content": "test"
+    }
 ]
