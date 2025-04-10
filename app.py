@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 
 def load_posts():
-    with open('posts.json', 'r') as file:
+    with open("posts.json", "r") as file:
         return json.load(file)
 
 
