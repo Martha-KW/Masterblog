@@ -18,7 +18,7 @@
     <div class="post">
     <h2>{{ post.title }}</h2>
     <h4>by {{ post.author }}</h4>
-    <p>{{ post.content[:300] }}</p>
+    <p>{{ post.content[:300].rsplit(' ',1)[0]}} ...</p>
     <a href="{{ url_for('view_post', post_id=post.id) }}" class="btn" >more</a>
     </div>
 

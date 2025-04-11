@@ -86,7 +86,7 @@ def like_post(id):
         if post['id'] == id:
 
             post['likes'] = post.get('likes', 0) + 1
-            breåçak
+            break
     else:
         return "Post not found", 404
 
