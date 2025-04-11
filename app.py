@@ -8,9 +8,18 @@ def load_posts():
     with open("posts.json", "r") as file:
         return json.load(file)
 
+
 def save_posts(posts):
     with open("posts.json", "w") as file:
         json.dump(posts, file, indent=4)
+
+
+def fetch_post_by_id(post_id):
+    posts = load_posts()
+    for post in posts:
+        if post['id'] == post_id:
+            return post
+    return None
 
 
 @app.route('/')
@@ -50,6 +59,25 @@ def delete(post_id):
     with open("posts.json", "w") as file:
         json.dump(updated_posts, file, indent=4)
     return redirect(url_for('index'))
+
+
+@app.route('/update/<int:post_id>', methods=['GET', 'POST'])
+def update(post_id):
+    posts = load_posts()
+    post = next((p for p in posts if p['id'] == post_id), None)
+
+    if not post:
+        return "Post not found", 404
+
+    if request.method == 'POST':
+
+        post['title'] = request.form.get('title')
+        post['author'] = request.form.get('author')
+        post['content'] = request.form.get('content')
+        save_posts(posts)
+        return redirect(url_for('index'))
+    return render_template('update.html', post=post)
+
 
 
 if __name__ == '__main__':

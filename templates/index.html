@@ -19,6 +19,12 @@
     <form action="{{ url_for('delete', post_id=post.id) }}" method="get"
           onsubmit="return confirm('do you really want to delete this post?');">
     <button type="submit">delete post</button>
+
+</form>
+
+    <!-- create an update button -->
+    <form action="{{ url_for('update', post_id=post.id) }}" method="get">
+    <button type="submit">update post</button>
 </form>
 
 
