@@ -5,32 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Flask Blog</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <div class="header-box">
+    <h1> Welcome to my Tea Blog with Flask!</h1>
+    </div>
+
     <!-- display blogposts from json file -->
-    <h1>Welcome to My Flask Blog!</h1>
         {% for post in posts %}
+    <div class="post">
     <h2>{{ post.title }}</h2>
     <h4>by {{ post.author }}</h4>
-    <p>{{ post.content }}</p>
+    <p>{{ post.content[:300] }}</p>
+    <a href="{{ url_for('view_post', post_id=post.id) }}" class="btn" >more</a>
+    </div>
+
 
      <!-- create delete Button for each post -->
-    <form action="{{ url_for('delete', post_id=post.id) }}" method="get"
+    <div class="post_actions">
+    <form action="{{ url_for('delete', post_id=post.id) }}" method="get" style="display: inline;"
           onsubmit="return confirm('do you really want to delete this post?');">
-    <button type="submit">delete post</button>
+    <button type="submit">delete</button>
 
 </form>
 
     <!-- create an update button -->
-    <form action="{{ url_for('update', post_id=post.id) }}" method="get">
-    <button type="submit">update post</button>
+    <form action="{{ url_for('update', post_id=post.id) }}" method="get" style="display: inline;">
+    <button type="submit">update</button>
 </form>
 
+     <!-- create a likes button -->
+<form action="{{ url_for('like_post', id=post['id']) }}" method="POST" style="display: inline;">
+    <button type="submit">❤️ {{ post['likes'] }}</button>
+
+
+</form>
+</div>
 
     <hr>
 {% endfor %}
-<p>Do you want to publish a new blog post?</br>
-    <a href=" http://127.0.0.1:5001/add"> Add a new post</a>
+<p>Do you want to publish a new blog post?<br><br>
+    <a href="{{ url_for('add') }}" class="btn">Add a new post</a>
+
 </body>
 </html>

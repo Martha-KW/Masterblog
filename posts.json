@@ -3,24 +3,34 @@
         "id": 1,
         "author": "John Doe",
         "title": "First Post",
-        "content": "This is my first post."
+        "content": "This is my first post.",
+        "likes": 2
     },
     {
         "id": 2,
         "author": "Jane Doe",
         "title": "Second Post",
-        "content": "This is another post. and it was updated!"
+        "content": "This is another post. and it was updated!",
+        "likes": 0
     },
     {
         "id": 3,
         "title": "Upload test",
         "author": "admin",
-        "content": "does this work?"
+        "content": "does this work?",
+        "likes": 1
     },
     {
         "id": 4,
         "title": "updated",
         "author": "admins",
-        "content": "HELLO this was updated"
+        "content": "HELLO this was updated",
+        "likes": 1
+    },
+    {
+        "id": 5,
+        "title": "New test",
+        "author": "admin",
+        "content": "test"
     }
 ]

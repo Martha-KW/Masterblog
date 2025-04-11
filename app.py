@@ -79,6 +79,30 @@ def update(post_id):
     return render_template('update.html', post=post)
 
 
+@app.route('/like/<int:id>', methods=['POST'])
+def like_post(id):
+    posts = load_posts()
+    for post in posts:
+        if post['id'] == id:
+
+            post['likes'] = post.get('likes', 0) + 1
+            breåçak
+    else:
+        return "Post not found", 404
+
+    save_posts(posts)
+    return redirect(url_for('index'))
+
+
+@app.route('/post/<int:post_id>')
+def view_post(post_id):
+    posts = load_posts()  # ← das hat gefehlt
+    post = next((p for p in posts if p['id'] == post_id), None)
+    if post is None:
+        abort(404)
+    return render_template('view_post.html', post=post)
+
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5001, debug=True)

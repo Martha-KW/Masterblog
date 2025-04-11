@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #F5F5F5;
+    font-family: 'Lato', sans-serif;
+    background-color: #B6CFB6;
     padding: 20px;
     color: #333;
 }
@@ -8,10 +8,13 @@ body {
 h1 {
     text-align: center;
     color: #4F4F4F;
+    font-weight:900;
+    font-size:50px;
 }
 
 .post {
-    background-color: #FFF;
+    color: #4F4F4F;
+    background-color: #E6FCE5;
     border: 1px solid #DDD;
     padding: 20px;
     margin-bottom: 20px;
@@ -24,4 +27,42 @@ h1 {
 
 .post p {
     margin: 10px 0;
+}
+
+button, .btn {
+    padding: 0.5em 1em;
+    background-color: #97C1A9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size:1em;
+    text-decoration: none;
+
+}
+
+button:hover, .btn:hover {
+    background-color: #CCE2CB;
+    text-decoration: none;
+}
+
+.header-box {
+    background-image: url('/static/pexels-minan1398-1353938.jpg');
+    background-size: cover;
+    background-position: top center;
+    padding: 2rem;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    text-align: center;
+    /* free picture from pexels, by Min An, https://www.pexels.com/@minan1398/ */
+}
+
+
+
+.post-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
 }
