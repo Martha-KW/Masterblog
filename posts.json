@@ -16,17 +16,5 @@
         "title": "Upload test",
         "author": "admin",
         "content": "does this work?\r\n"
-    },
-    {
-        "id": 4,
-        "title": "second test",
-        "author": "admin",
-        "content": "without line break?"
-    },
-    {
-        "id": 5,
-        "title": "upload with link",
-        "author": "admin",
-        "content": "test"
     }
 ]

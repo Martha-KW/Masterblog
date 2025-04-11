@@ -7,11 +7,21 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
+    <!-- display blogposts from json file -->
     <h1>Welcome to My Flask Blog!</h1>
         {% for post in posts %}
     <h2>{{ post.title }}</h2>
     <h4>by {{ post.author }}</h4>
     <p>{{ post.content }}</p>
+
+     <!-- create delete Button for each post -->
+    <form action="{{ url_for('delete', post_id=post.id) }}" method="get"
+          onsubmit="return confirm('do you really want to delete this post?');">
+    <button type="submit">delete post</button>
+</form>
+
+
     <hr>
 {% endfor %}
 <p>Do you want to publish a new blog post?</br>
